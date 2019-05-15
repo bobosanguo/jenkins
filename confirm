@@ -5,6 +5,7 @@ pipeline {
 
         stage('Deploy - Staging') {
             steps {
+                sh 'chmod 755 ./deploy ./run-smoke-tests'
                 sh './deploy staging'
                 sh './run-smoke-tests'
             }
